@@ -152,10 +152,4 @@ public class TicketServiceTest {
 
 ---
 
-# Fazit
 
-Durch die Aufgabe konnte ich praktische Erfahrungen mit JUnit, TDD und Mocking sammeln.
-
-Besonders interessant war die Arbeit mit Generativer AI im TDD-Teil. Die AI konnte eine funktionierende Grundlösung erzeugen, übersah jedoch einen wichtigen Edge Case. Durch zusätzliche Tests und eine Exception-Behandlung konnte die Lösung verbessert werden.
-
-Mocking mit Mockito ermöglichte das Testen von Geschäftslogik ohne externe Abhängigkeiten.
