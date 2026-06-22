@@ -68,6 +68,20 @@ berechneGesamtpreis(-3, 25.0);
 Deshalb habe ich einen zusätzlichen Test erstellt, der eine Exception erwartet.
 
 ### Refactor Green
+
+```java
+public double berechneGesamtpreis(int anzahlTickets,
+                                      double preisProTicket) {
+
+        if (anzahlTickets < 0) {
+            throw new IllegalArgumentException(
+                    "Ticketanzahl darf nicht negativ sein");
+        }
+
+        return anzahlTickets * preisProTicket;
+    }
+```
+    
 ![TDD Refactor Green](images/tdd_refactor_green.png)
 
 
