@@ -8,8 +8,24 @@ Die Entwicklungsschritte habe ich während der Bearbeitung dokumentiert und durc
 
 Ich habe für mein Projekt SpieltagPLUS eine eigene Klasse TicketpreisRechner entwickelt, die den Ticketpreis berechnet aus der Multiplikation Ticketanzahl und Preis pro Ticket.
 Mit JUnit wurden zwei Tests durchgeführt:
-- Test der korrekten Preisbrechnung
-- TEst auf IllegalArgumentException, wenn man eine ungültige Ticketanzahl eingibt
+
+1. Test der korrekten Preisbrechnung
+
+  ### Test der Preisberechnung
+
+```java
+@Test
+void testPreisberechnung() {
+    TicketpreisRechner rechner =
+            new TicketpreisRechner();
+
+    assertEquals(50.0,
+            rechner.berechnePreis(2, 25.0));
+}
+```
+
+
+ 2. Test auf IllegalArgumentException, wenn man eine ungültige Ticketanzahl eingibt
 
 Der Exception-Test wurde mit `assertThrows()` umgesetzt:
 
