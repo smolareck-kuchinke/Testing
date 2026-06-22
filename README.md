@@ -28,7 +28,23 @@ Ich habe hierfür eine Klasse Warenkorb für mein Projekt SpieltagPLUS entwickel
 
 ### RED
 
+Zunächst habe ich einen Test geschrieben, obwohl die Klasse noch nicht existierte.
+
+Der Test schlug also fehl.
+
+![TDD Red](images/tdd_red.png)
+
+---
+
 ### Green
+
+Dann habe ich die Klasse implementiert.
+
+Test war nun erfolgreich.
+
+![TDD Green](images/tdd_green.png)
+
+---
 
 ### AI
 
