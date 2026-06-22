@@ -98,19 +98,56 @@ Ich habe ein Interface `BezahlService` erstellt und im `TicketService` verwendet
 
 Im Test wurde anschließend ein Mock-Objekt erzeugt.
 
-Folgende Szenarien wurden getestet:
+Folgende Szenarien  getestet:
 
 - erfolgreicher Ticketkauf
 - fehlgeschlagener Ticketkauf
 
-Dadurch konnte die Logik des TicketService getestet werden, ohne einen echten Bezahldienst aufzurufen.
+Dadurch konnte die Logik des TicketService getestet werden ohne einen echten Bezahldienst aufzurufen.
 
-### Erfolgreicher Mocking-Test
+### Erfolgreicher Mocking-Test für beide Szenarien
 
-![Mocking Test](images/mocking_test_success.png)
+```java
+package de.karl.testing;
 
-### Beide Mocking-Szenarien erfolgreich
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
+import org.junit.jupiter.api.Test;
+
+public class TicketServiceTest {
+
+    @Test
+    void testTicketKaufErfolgreich() {
+
+        BezahlService mockBezahlService = mock(BezahlService.class);
+
+        when(mockBezahlService.bezahle(25.0)).thenReturn(true);
+
+        TicketService ticketService =
+                new TicketService(mockBezahlService);
+
+        String ergebnis = ticketService.kaufeTicket(25.0);
+
+        assertEquals("Ticket erfolgreich gekauft", ergebnis);
+    }
+    
+    @Test
+    void testTicketKaufFehlgeschlagen() {
+
+        BezahlService mockBezahlService = mock(BezahlService.class);
+
+        when(mockBezahlService.bezahle(25.0)).thenReturn(false);
+
+        TicketService ticketService =
+                new TicketService(mockBezahlService);
+
+        String ergebnis = ticketService.kaufeTicket(25.0);
+
+        assertEquals("Bezahlung fehlgeschlagen", ergebnis);
+    }
+}
+```
 ![Mocking Test 2](images/mocking_test_success2.png)
 
 ---
