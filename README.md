@@ -11,6 +11,22 @@ Mit JUnit wurden zwei Tests durchgeführt:
 - Test der korrekten Preisbrechnung
 - TEst auf IllegalArgumentException, wenn man eine ungültige Ticketanzahl eingibt
 
+Der Exception-Test wurde mit `assertThrows()` umgesetzt:
+
+```java
+@Test
+void testNegativeTicketanzahl() {
+    TicketpreisRechner rechner =
+            new TicketpreisRechner();
+
+    assertThrows(
+            IllegalArgumentException.class,
+            () -> rechner.berechnePreis(-1, 25.0));
+}
+```
+
+
+
 Die Tests wurden mit mvn test ausgeführt und bestanden.
 
 ### Projekt angelegt
