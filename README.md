@@ -90,13 +90,11 @@ public double berechneGesamtpreis(int anzahlTickets,
 
 In meinem Projekt SpieltagPLUS ist der Bezahldienst eine unangenehme Methode, da ich eine zuverlässige Internetverbindung brauche, abhängig von von externen Anbietern bin etc.
 
-Ein echter Bezahldienst würde beispielsweise PayPal oder einen anderen Zahlungsanbieter ansprechen.
+Ein echter Bezahldienst würde z.B. PayPal oder einen anderen Zahlungsanbieter ansprechen.
 
-Für Unit-Tests soll diese externe Abhängigkeit nicht tatsächlich ausgeführt werden.
+Für Unit-Tests sollte diese externe Abhängigkeit nicht tatsächlich ausgeführt werden, folglich habe ich Mockito verwendet.
 
-Deshalb wurde Mockito verwendet.
-
-Es wurde ein Interface `BezahlService` erstellt und im `TicketService` verwendet.
+Ich habe ein Interface `BezahlService` erstellt und im `TicketService` verwendet.
 
 Im Test wurde anschließend ein Mock-Objekt erzeugt.
 
