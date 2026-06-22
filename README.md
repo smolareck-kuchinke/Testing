@@ -24,7 +24,7 @@ Die Tests wurden mit mvn test ausgeführt und bestanden.
 
 ## A2 TDD
 
-Ich habe hierfür eine Klasse Warenkorb entwickelt.
+Ich habe hierfür eine Klasse Warenkorb für mein Projekt SpieltagPLUS entwickelt.
 
 ### RED
 
