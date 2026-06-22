@@ -8,3 +8,9 @@ Mit JUnit wurden zwei Tests durchgeführt:
 - TEst auf IllegalArgumentException, wenn man eine ungültige Ticketanzahl eingibt
 
 Die Tests wurden mit mvn test ausgeführt und bestanden.
+
+## A2 TDD
+
+## A3 Mocking
+
+In meinem Projekt SpieltagPLUS ist der Bezahldienst eine unangenehme Methode, da ich eine zuverlässige Internetverbindung brauche, abhängig von von externen Anbietern etc.
