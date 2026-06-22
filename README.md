@@ -1,4 +1,8 @@
 # Testing
+## HINWEIS: 
+
+Die Entwicklungsschritte habe ich während der Bearbeitung dokumentiert und durch Screenshots gespeichert. Da ich auf der GitHub-Weboberfläche gearbeitet habe, sind nicht alle Zwischenstände als separate Commits veröffentlicht. 
+
 
 ## A1 Unit-Test
 
