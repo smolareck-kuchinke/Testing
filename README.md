@@ -107,6 +107,16 @@ Dadurch konnte die Logik des TicketService getestet werden ohne einen echten Bez
 
 ### Erfolgreicher Mocking-Test für beide Szenarien
 
+Interface
+
+```java
+public interface BezahlService {
+    boolean bezahle(double betrag);
+}
+```` 
+
+Testklasse
+
 ```java
 package de.karl.testing;
 
