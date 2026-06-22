@@ -24,6 +24,73 @@ Die Tests wurden mit mvn test ausgeführt und bestanden.
 
 ## A2 TDD
 
+Ich habe hierfür eine Klasse Warenkorb entwickelt.
+
+### RED
+
+### Green
+
+### AI
+
+Für die Erstellen der ersten Lösung habe ich AI (ChatGPT) benutzt.
+Der Prompt war: "Erstelle eine Java-Klasse TicketWarenkorb mit einer Methode berechneGesamtpreis(int anzahlTickets, double preisProTicket). Die Methode soll den Gesamtpreis berechnen. Schreibe außerdem passende JUnit-Tests."
+
+AI Code:
+
+```java
+public double berechneGesamtpreis(int anzahlTickets,
+                                  double preisProTicket) {
+    return anzahlTickets * preisProTicket;
+}
+```
+Funktionierte korrekt, jedoch berücksichigte die AI keinen Edge-Case, es war möglich mit folgender Eingabe ein negatives Gesamtergebnis zu haben; was beim Gesamtpreis Unsinn ist.
+
+```java
+berechneGesamtpreis(-3, 25.0);
+```
+
+Deshalb habe ich einen zusätzlichen Test erstellt, der eine Exception erwartet.
+
+### Refactor Green
+![TDD Refactor Green](images/tdd_refactor-green.png)
+
+
+
 ## A3 Mocking
 
-In meinem Projekt SpieltagPLUS ist der Bezahldienst eine unangenehme Methode, da ich eine zuverlässige Internetverbindung brauche, abhängig von von externen Anbietern etc.
+In meinem Projekt SpieltagPLUS ist der Bezahldienst eine unangenehme Methode, da ich eine zuverlässige Internetverbindung brauche, abhängig von von externen Anbietern bin etc.
+
+Ein echter Bezahldienst würde beispielsweise PayPal oder einen anderen Zahlungsanbieter ansprechen.
+
+Für Unit-Tests soll diese externe Abhängigkeit nicht tatsächlich ausgeführt werden.
+
+Deshalb wurde Mockito verwendet.
+
+Es wurde ein Interface `BezahlService` erstellt und im `TicketService` verwendet.
+
+Im Test wurde anschließend ein Mock-Objekt erzeugt.
+
+Folgende Szenarien wurden getestet:
+
+- erfolgreicher Ticketkauf
+- fehlgeschlagener Ticketkauf
+
+Dadurch konnte die Logik des TicketService getestet werden, ohne einen echten Bezahldienst aufzurufen.
+
+### Erfolgreicher Mocking-Test
+
+![Mocking Test](images/mocking_test_success.png)
+
+### Beide Mocking-Szenarien erfolgreich
+
+![Mocking Test 2](images/mocking_test_success2.png)
+
+---
+
+# Fazit
+
+Durch die Aufgabe konnte ich praktische Erfahrungen mit JUnit, TDD und Mocking sammeln.
+
+Besonders interessant war die Arbeit mit Generativer AI im TDD-Teil. Die AI konnte eine funktionierende Grundlösung erzeugen, übersah jedoch einen wichtigen Edge Case. Durch zusätzliche Tests und eine Exception-Behandlung konnte die Lösung verbessert werden.
+
+Mocking mit Mockito ermöglichte das Testen von Geschäftslogik ohne externe Abhängigkeiten.
