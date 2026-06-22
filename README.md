@@ -11,7 +11,6 @@ Mit JUnit wurden zwei Tests durchgeführt:
 
 1. Test der korrekten Preisbrechnung
 
-  ### Test der Preisberechnung
 
 ```java
 @Test
