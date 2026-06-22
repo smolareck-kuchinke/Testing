@@ -102,7 +102,7 @@ berechneGesamtpreis(-3, 25.0);
 
 Deshalb habe ich einen zusätzlichen Test erstellt, der eine Exception erwartet.
 
-### Refactor Green
+### Refactor 
 
 ```java
 public double berechneGesamtpreis(int anzahlTickets,
