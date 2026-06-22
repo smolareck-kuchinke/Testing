@@ -68,7 +68,7 @@ berechneGesamtpreis(-3, 25.0);
 Deshalb habe ich einen zusätzlichen Test erstellt, der eine Exception erwartet.
 
 ### Refactor Green
-![TDD Refactor Green](images/tdd_refactor-green.png)
+![TDD Refactor Green](images/tdd_refactor_green.png)
 
 
 
